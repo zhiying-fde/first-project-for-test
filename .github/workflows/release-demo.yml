@@ -1,0 +1,22 @@
+name: Publish demo plugin
+on:
+  push:
+    tags: [v1.1.2]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pack and verify the supplied plugin ZIP
+        run: |
+          python3 tools/pack-plugin.py plugin "$RUNNER_TEMP/aigv-demo-1.1.2.zip"
+          cd "$RUNNER_TEMP"
+          echo 'b2d1541c8971bf0e7e867b6f93d94834342dff89de37deb35df713b92daf4c8f  aigv-demo-1.1.2.zip' | sha256sum --check
+          sha256sum aigv-demo-1.1.2.zip > SHA256SUMS.txt
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" "$RUNNER_TEMP/aigv-demo-1.1.2.zip" "$RUNNER_TEMP/SHA256SUMS.txt" --repo "$GITHUB_REPOSITORY" --title '演示插件 1.1.2' --notes-file .github/release-notes-1.1.2.md

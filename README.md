@@ -2,6 +2,10 @@
 
 智影桌面插件独立示例，版本 **1.1.2**，插件 ID 为 `aigv.material-processor`。提供 SDK 1.1 的 49 项公开方法清单、可编辑参数、调用示例和真实宿主返回。
 
+## 下载安装
+
+直接下载 [演示插件 1.1.2 ZIP](https://github.com/zhiying-fde/first-project-for-test/releases/download/v1.1.2/aigv-demo-1.1.2.zip)，在智影桌面端插件管理页导入，无需解压。版本说明与校验文件见 [Releases](https://github.com/zhiying-fde/first-project-for-test/releases/tag/v1.1.2)。
+
 ## 本地使用
 
 ```sh
