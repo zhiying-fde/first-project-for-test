@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>演示插件 · SDK 能力实验室</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><div><span class="eyebrow">AIGV PLUGIN SDK · 1.1</span><h1>演示插件</h1><p>按能力查看基础用法，在真实宿主中执行，观察实际返回。</p></div><div class="host"><span id="hostState">正在连接宿主</span><span id="coverage">49 项公开方法</span></div></header>
+<main><aside><label class="search">搜索能力<input id="search" type="search" placeholder="模型、文件、积分、素材…"></label><nav id="groups"></nav><div class="tip">示例会使用真实账号和服务。生成与AI工具按平台规则计费；读取说明并核对输入后执行。</div></aside>
+<section class="content"><div class="summary"><h2 id="groupTitle">全部能力</h2><span id="count"></span></div><div class="workspace"><div class="method-list" id="methods"></div><section class="detail" aria-label="SDK基础使用演示"><div class="detail-head"><div><p id="category"></p><h2 id="methodTitle"></h2><code id="methodName"></code></div><span id="permission"></span></div><p id="note"></p>
+<label>调用参数（JSON）<textarea id="input" spellcheck="false" rows="10"></textarea></label>
+<div class="actions"><button id="example">填入基础示例</button><button id="estimate" hidden>预估积分</button><output id="quote"></output></div>
+<label id="consentRow" class="check" hidden><input id="consent" type="checkbox">我已核对当前输入、平台费用和副作用，确认执行</label>
+<button id="execute" class="primary">执行此项演示</button><p id="status" role="status" aria-live="polite"></p>
+<details open><summary>JavaScript 使用示例</summary><pre id="code"></pre></details>
+<div class="output-head"><h3>实际返回</h3><button id="copy">复制JSON</button></div><pre id="result">选择一个方法开始。</pre>
+<details><summary>本实例最近资源与调用记录</summary><pre id="context"></pre><pre id="history"></pre></details>
+</section></div></section></main><script type="module" src="app.js"></script></body></html>

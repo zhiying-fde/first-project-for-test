@@ -1,0 +1,62 @@
+{
+  "manifestVersion": 1,
+  "id": "aigv.material-processor",
+  "name": "演示插件",
+  "description": "SDK 49项公开能力清单、基础调用演示与真实返回。",
+  "version": "1.1.2",
+  "hostSdkRange": "^1.0.0",
+  "platforms": [
+    "darwin-arm64",
+    "win32-x64"
+  ],
+  "ui": {
+    "entry": "ui/index.html"
+  },
+  "navigation": {
+    "label": "演示插件"
+  },
+  "scripts": {
+    "process": {
+      "entry": "scripts/process.py",
+      "language": "python",
+      "timeoutMs": 60000
+    },
+    "fixtures": {
+      "entry": "scripts/fixtures.py",
+      "language": "python",
+      "timeoutMs": 60000
+    },
+    "slow": {
+      "entry": "scripts/slow.py",
+      "language": "python",
+      "timeoutMs": 60000
+    }
+  },
+  "permissions": [
+    "identity.summary",
+    "config.read",
+    "config.write",
+    "files.pick",
+    "files.read",
+    "files.write",
+    "scripts.run",
+    "cloud.chat",
+    "models.read",
+    "credits.read",
+    "cloud.generate",
+    "cloud.tasks",
+    "cloud.embeddings",
+    "materials.read",
+    "materials.write",
+    "materials.upload",
+    "tools.read",
+    "tools.invoke"
+  ],
+  "configSchema": {
+    "prefix": {
+      "type": "string",
+      "label": "清单标题",
+      "default": "素材清单"
+    }
+  }
+}
